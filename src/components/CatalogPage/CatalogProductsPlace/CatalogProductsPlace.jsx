@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { Empty, Spin } from 'antd'
 import {ProductCard} from '../../ProductCard/ProductCard'
-import { getProductsToCatalog } from '../../../store/products/middleware'
+import { getProductsToCatalog } from '../../../store/catalog/middleware'
 import CatalogPagination from '../CatalogPagination/CatalogPagination'
 import { ProductsWrapper, Wrapper } from './StyledCatalogProductsPlace'
 import makeConfigFromUrl from '../../../utils/makeConfigFromUrl'
 import makeUrlFromConfig from '../../../utils/makeUrlFromConfig'
-import { selectCatalogProducts, selectIsLoading, selectProductsQuantity } from '../../../store/products/reducer'
+import { selectCatalogProducts, selectIsLoading, selectProductsQuantity } from '../../../store/catalog/reducer'
 
 const mapStateToProps = (state) => ({
   catalogProducts: selectCatalogProducts(state),

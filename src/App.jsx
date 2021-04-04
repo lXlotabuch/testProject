@@ -7,6 +7,7 @@ import ProductSubscribeModal from './components/ProductSubscribeModal/ProductSub
 import Router from './components/Router/Router'
 import { getCart } from './store/cart/middleware'
 import ServiceSection from './components/ServiceSection/ServiceSection'
+import AuthModal from './components/AuthModal/AuthModal'
 
 const App = connect(null, {
   setWishlist, getCart
@@ -23,6 +24,7 @@ const App = connect(null, {
     <div style={{marginTop: '120px'}}>
       <Header />
       <ProductSubscribeModal />
+      <AuthModal />
       <Router />
       <ServiceSection />
       <Footer />

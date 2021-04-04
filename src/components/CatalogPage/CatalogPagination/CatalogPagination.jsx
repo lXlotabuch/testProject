@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useHistory, useLocation } from 'react-router-dom'
-import { selectProductsQuantity } from '../../../store/products/reducer'
+import { selectProductsQuantity } from '../../../store/catalog/reducer'
 import makeConfigFromUrl from '../../../utils/makeConfigFromUrl'
 import makeUrlFromConfig from '../../../utils/makeUrlFromConfig'
 import {StyledPagination} from './StyledCatalogPagination'

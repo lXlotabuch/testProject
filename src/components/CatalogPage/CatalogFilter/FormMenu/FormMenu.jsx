@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { brands as defBrands, categories as defCategories, checkFilterConfig } from '../../filterConfig'
 import { StyledCheckbox } from '../StylesCatalogfilter'
 import makeConfigFromUrl from '../../../../utils/makeConfigFromUrl';
-import { selectMinMaxPrice } from '../../../../store/products/reducer';
+import { selectMinMaxPrice } from '../../../../store/catalog/reducer';
 
 const layout = {
   wrapperCol: { span: 24 }

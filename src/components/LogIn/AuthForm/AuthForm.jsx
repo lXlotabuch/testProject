@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 import { React, useState} from 'react';
 import styled from 'styled-components'
@@ -22,7 +23,8 @@ const AuthForm = connect(null, {
     authLogIn,
     compareLSItemsAndDBItems,
     addLSToServer,
-    getCart
+    getCart,
+    finishCallback
   }
 ) => {
   const formLayout = 'vertical'
@@ -31,12 +33,13 @@ const AuthForm = connect(null, {
 
   const onFinish = async (values) => {
     const {status, data} = await authLogIn(values)
-
+    
     if (status === 200) {
       addLSToServer()
       getCart()
-      history.push('/')
       compareLSItemsAndDBItems()
+      // eslint-disable-next-line no-unused-expressions
+      typeof finishCallback === 'function' ? finishCallback() : history.push('/')
     }
 
     if (status === 400) {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { message } from 'antd';
-import { DOMAIN, getHeaders } from '../general';
+import { DOMAIN, getHeaders } from '../../utils/constants';
 
 const BASE_ENDPOINT = `${DOMAIN}/customers`;
 
@@ -42,12 +42,14 @@ export const changePassword = (passwords) => {
   return res
 }
 
-export const updateCustomer = (credentials) => {
+export const updateCustomer = (credentials, succesMessage) => {
   const headers = getHeaders();
   const res = axios.put(BASE_ENDPOINT, credentials, {headers})
     .then((data) => {
       if (data.status === 200) {
-        message.success('Your contact information has been changed')
+        if (succesMessage) {
+          message.success('Your contact information has been changed')
+        }
       }
     })
     .catch((error) => error.response)

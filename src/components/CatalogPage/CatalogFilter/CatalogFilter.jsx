@@ -20,7 +20,7 @@ import StyledButton from '../../common/Buttons/StyledButton'
 import {FormMenu} from './FormMenu/FormMenu';
 import makeConfigFromUrl from '../../../utils/makeConfigFromUrl';
 import makeUrlFromConfig from '../../../utils/makeUrlFromConfig';
-import { selectMinMaxPrice } from '../../../store/products/reducer';
+import { selectMinMaxPrice } from '../../../store/catalog/reducer';
 
 const layout = {
   labelCol: { span: 6 },
